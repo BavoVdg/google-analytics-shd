@@ -39,5 +39,25 @@
     <button class="button button_2">Stuur button_2 event</button>
     <button class="button button_3">Stuur button_3 event</button>
     <button class="button button_4">Stuur button_4 event</button>
+    <form method="get">
+      <label for="budget-input"
+        >budget:
+        <input
+          id="budget-input"
+          name="budget"
+          type="range"
+          min="0"
+          max="1000"
+        />
+      </label>
+      <label for="ecommerce-input"
+        >e-commerce:
+        <select id="ecommerce-input" name="ecommerce">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+      </label>
+      <input type="submit" name="save" />
+    </form>
   </body>
 </html>
