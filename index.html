@@ -61,11 +61,13 @@
     </form>
   </body>
   <script>
+    console.log("0.0.1");
+
     const form = document.querySelector("#form");
-    form.addEventListener("submit", () => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const budget = form.querySelector("budget-input").value;
-      const ecommerce = form.querySelector("ecommerce-input").value;
+      const budget = document.querySelector("#budget-input").value;
+      const ecommerce = document.querySelector("#ecommerce-input").value;
 
       localStorage.clear();
       window.dataLayer = window.dataLayer || [];
