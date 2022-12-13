@@ -39,7 +39,7 @@
     <button class="button button_2">Stuur button_2 event</button>
     <button class="button button_3">Stuur button_3 event</button>
     <button class="button button_4">Stuur button_4 event</button>
-    <form id="form" method="get">
+    <form id="form" method="post">
       <label for="budget-input"
         >budget:
         <input
@@ -60,4 +60,19 @@
       <input type="submit" name="save" />
     </form>
   </body>
+  <script>
+    const form = document.querySelector("#form");
+    form.addEventListener("submit", () => {
+      e.preventDefault();
+      const budget = form.querySelector("budget-input").value;
+      const ecommerce = form.querySelector("ecommerce-input").value;
+
+      localStorage.clear();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        budget,
+        ecommerce,
+      });
+    });
+  </script>
 </html>
