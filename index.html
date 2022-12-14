@@ -31,7 +31,8 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <h1>Title</h1>
+    <h1>Google Analytics - SHD</h1>
+    <h2>Button clicks</h2>
     <button class="button header_button_click">
       Stuur header_button_click event
     </button>
@@ -39,6 +40,7 @@
     <button class="button button_2">Stuur button_2 event</button>
     <button class="button button_3">Stuur button_3 event</button>
     <button class="button button_4">Stuur button_4 event</button>
+    <h2>Form submit</h2>
     <form id="form" method="post">
       <label for="budget-input"
         >budget:
@@ -59,10 +61,20 @@
       </label>
       <input type="submit" name="save" />
     </form>
+    <h2>Users</h2>
+    <p class="user-state">No logged in user.</p>
+    <button onclick="updateUser('user 1')" class="button user_1">
+      Log in - user 1
+    </button>
+    <button onclick="updateUser('user 2')" class="button user 1">
+      Log in - user 2
+    </button>
   </body>
   <script>
+    // version
     console.log("0.0.1");
 
+    // Form - push data to data layer
     const form = document.querySelector("#form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -76,5 +88,28 @@
         ecommerce,
       });
     });
+
+    // users
+    const updateUser = (value) => {
+      const userState = document.querySelector(".user-state");
+      if (userState.innerHTML === value) {
+        // Clear current user
+        userState.innerHTML = "No logged in user.";
+        removeUserIdCookie(value);
+      } else {
+        // Log in other user
+        userState.innerHTML = value;
+        setUserIdCookie(value);
+      }
+    };
+
+    // cookies
+    const setUserIdCookie = (value) => {
+      document.cookie = `userId=${value}; expires=Thu, 18 Dec 2030 12:00:00 UTC;`;
+    };
+
+    const removeUserIdCookie = (value) => {
+      document.cookie = `userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+    };
   </script>
 </html>
