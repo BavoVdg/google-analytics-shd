@@ -62,7 +62,7 @@
       <input type="submit" name="save" />
     </form>
     <h2>Users</h2>
-    <p class="user-state">No logged in user.</p>
+    <p class="user-state">No cookies</p>
     <button onclick="updateUser('user 1')" class="button user_1">
       Log in - user 1
     </button>
@@ -71,7 +71,7 @@
     </button>
   </body>
   <script>
-    // version
+    // Version
     console.log("0.0.1");
 
     // Form - push data to data layer
@@ -89,21 +89,26 @@
       });
     });
 
-    // users
+    // Users
+    // Show current cookies
+    document.querySelector(
+      ".user-state"
+    ).innerHTML = `cookies: ${document.cookie}`;
+
     const updateUser = (value) => {
       const userState = document.querySelector(".user-state");
-      if (userState.innerHTML === value) {
-        // Clear current user
-        userState.innerHTML = "No logged in user.";
+      if (userState.innerHTML.includes(value)) {
+        // Clear user cookie
         removeUserIdCookie(value);
+        window.location.reload();
       } else {
-        // Log in other user
-        userState.innerHTML = value;
+        // Set user cookie
         setUserIdCookie(value);
+        window.location.reload();
       }
     };
 
-    // cookies
+    // Cookies
     const setUserIdCookie = (value) => {
       document.cookie = `userId=${value}; expires=Thu, 18 Dec 2030 12:00:00 UTC;`;
     };
