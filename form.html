@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-524MQ89");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Analytics | SHD</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-524MQ89"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <h1>Google Analytics - SHD</h1>
+    <a href="/index.html">Home</a>
+    <h2>Form abandonment</h2>
+    <form id="form" method="post">
+      <label for="name"
+        >Naam
+        <input id="name" name="name" type="text" />
+      </label>
+      <label for="leeftijd"
+        >Leeftijd
+        <input id="leeftijd" name="leeftijd" type="number" min="0" max="120" />
+      </label>
+      <label for="geslacht"
+        >Geslacht
+        <select id="geslacht" name="geslacht">
+          <option value="andere">andere</option>
+          <option value="man">man</option>
+          <option value="vrouw">vrouw</option>
+        </select>
+      </label>
+      <input type="submit" name="save" />
+    </form>
+  </body>
+  <script>
+    // Version
+    console.log("0.0.1");
+
+    // Form - push data to data layer
+    // const form = document.querySelector("#form");
+    // form.addEventListener("submit", (e) => {
+    //   e.preventDefault();
+    //   const budget = document.querySelector("#budget-input").value;
+    //   const ecommerce = document.querySelector("#ecommerce-input").value;
+
+    //   localStorage.clear();
+    //   window.dataLayer = window.dataLayer || [];
+    //   window.dataLayer.push({
+    //     budget,
+    //     ecommerce,
+    //   });
+    // });
+  </script>
+</html>
